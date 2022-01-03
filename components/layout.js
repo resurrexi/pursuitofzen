@@ -1,28 +1,30 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
-import Script from 'next/script'
+import Prism from 'prismjs'
+import 'prismjs/components/prism-jsx'
+import 'prismjs/components/prism-python'
+import 'prismjs/plugins/line-numbers/prism-line-numbers'
 
 export default function Layout({ children, pageTitle }) {
+  useEffect(() => {
+    Prism.highlightAll()
+  }, [])
+
   return (
-    <>
+    <div className="flex flex-col h-screen">
       <Head>
         <title>Pursuit of Zen - {pageTitle}</title>
         <meta name="description" content="Personal website of Liquan Yang" />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://unpkg.com/prismjs@1.25.0/themes/prism-tomorrow.css"
-          rel="stylesheet"
-        />
-        <link
-          href="https://unpkg.com/prismjs@1.25.0/plugins/line-numbers/prism-line-numbers.css"
-          rel="stylesheet"
-        />
       </Head>
-      <div className="relative bg-white max-w-3xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      <div className="grow bg-white max-w-3xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         {children}
       </div>
-      <Script src="https://unpkg.com/prismjs@1.25.0/components/prism-core.min.js"></Script>
-      <Script src="https://unpkg.com/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js"></Script>
-      <Script src="https://unpkg.com/prismjs@1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></Script>
-    </>
+      <footer className="flex-none">
+        <div className="bg-white border-t border-gray-200 text-gray-500 max-w-3xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+          &copy; {(new Date()).getFullYear()} Pursuit of Zen
+        </div>
+      </footer>
+    </div>
   )
 }
