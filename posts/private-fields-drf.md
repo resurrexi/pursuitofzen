@@ -1,5 +1,5 @@
 ---
-title: 'Making fields private based on request user in Django Rest Framework'
+title: 'Implementing private fields in Django Rest Framework'
 date: '2021-04-30'
 tags: ['django', 'drf']
 ---

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import Layout from '../../components/layout'
@@ -28,7 +29,7 @@ export default function Post({ postData }) {
     <Layout pageTitle={postData.meta.title}>
       <main className="space-y-6 divide-y-2 divide-gray-200">
         <div className="space-y-2">
-          <h1 className="text-2xl leading-8 font-bold tracking-tight text-gray-800">
+          <h1 className="text-2xl leading-relaxed font-bold tracking-tight text-gray-800">
             {postData.meta.title}
           </h1>
           <div className="flex justify-between text-gray-500">
@@ -44,11 +45,15 @@ export default function Post({ postData }) {
           </div>
           <div className="space-x-2">
             {postData.meta.tags.map(e => (
-              <span
-                key={e}
-                className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-secondary-100 text-secondary-800 hover:bg-secondary-200">
-                {e}
-              </span>
+              <Link key={e} href={`/tags/${e}`}>
+                <a>
+                  <button
+                    type="button"
+                    className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-secondary-100 text-secondary-800 hover:bg-secondary-200">
+                    {e}
+                  </button>
+                </a>
+              </Link>
             )
             )}
           </div>
@@ -59,6 +64,6 @@ export default function Post({ postData }) {
           </ReactMarkdown>
         </article>
       </main>
-    </Layout>
+    </Layout >
   )
 }
