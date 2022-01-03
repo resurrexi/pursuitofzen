@@ -1,9 +1,14 @@
+import { ThemeProvider } from 'next-themes'
 import '../styles/globals.css'
-import 'prismjs/themes/prism-tomorrow.css'
+import '../styles/prism-one-dark.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider defaultTheme="system" attribute="class">
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
 }
 
 export default MyApp
