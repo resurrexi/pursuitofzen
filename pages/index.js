@@ -40,7 +40,7 @@ export default function Home({ allPostsData }) {
                 onClick={() => router.push(`/posts/${id}`)}>
                 <div className="w-full">
                   <div className="flex justify-between">
-                    <span className="block text-lg font-bold text-gray-700 transition duration-300 ease-in-out sm:text-xl group-hover:text-primary-500 group-hover:translate-x-2">
+                    <span className="block truncate text-lg font-bold text-gray-700 transition duration-300 ease-in-out sm:text-xl group-hover:text-primary-500 group-hover:translate-x-2">
                       {meta.title}
                     </span>
                     <span className="flex items-center text-base text-gray-500 transition duration-300 ease-in-out sm:text-transparent group-hover:text-gray-500 group-hover:-translate-x-2">

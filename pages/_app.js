@@ -1,6 +1,5 @@
 import { ThemeProvider } from 'next-themes'
 import '../styles/globals.css'
-import '../styles/prism-one-dark.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 function MyApp({ Component, pageProps }) {
