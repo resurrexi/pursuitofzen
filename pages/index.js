@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/layout'
 import { getSortedPostsData } from '../lib/posts'
@@ -14,20 +13,15 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout>
-      <Head>
-        <title>Pursuit of Zen - Personal website of Liquan Yang</title>
-        <meta name="description" content="Personal website of Liquan Yang" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout pageTitle="Personal site of Liquan Yang">
       <main className="space-y-6 divide-y-2 divide-gray-200 sm:space-y-8">
         <section className="flex flex-col place-items-center">
           <Image src="/profile.jpeg" alt="Lee" width={144} height={144} className="rounded-full" />
           <h1 className="mt-6 text-2xl tracking-tight font-bold text-gray-800 sm:text-3xl">
-            Hi, I'm Liquan Yang
+            Hi, I&apos;m Liquan Yang
           </h1>
           <p className="mt-4 text-lg text-gray-500 leading-relaxed sm:text-xl sm:leading-relaxed">
-            I'm a geek, musician, adventurer, and most importantly, a lifelong student.
+            I&apos;m a geek, musician, adventurer, and most importantly, a lifelong student.
             I like solving challenging problems and learning about technologies that I find interesting.
             I have an interest in machine learning, software development, and most recently, data engineering.
             You can find me on <a href="https://stackoverflow.com/users/6245650/scratchnpurr" className="text-primary-600 hover:text-primary-500">StackOverflow</a> where
