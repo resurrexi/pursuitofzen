@@ -31,14 +31,22 @@ export default function Post({ postData }) {
           <h1 className="text-2xl leading-8 font-bold tracking-tight text-gray-800">
             {postData.meta.title}
           </h1>
-          <span className="block text-gray-500">
-            <Date dateString={postData.meta.date} />
-          </span>
+          <div className="flex justify-between text-gray-500">
+            <span className="block">
+              <Date dateString={postData.meta.date} />
+            </span>
+            <span className="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+              </svg>
+              {postData.readTime} min
+            </span>
+          </div>
           <div className="space-x-2">
             {postData.meta.tags.map(e => (
               <span
                 key={e}
-                className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-secondary-100 text-secondary-800">
+                className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-secondary-100 text-secondary-800 hover:bg-secondary-200">
                 {e}
               </span>
             )
