@@ -2,13 +2,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import Layout from '../components/layout'
-import { getSortedPostsData } from '../lib/posts'
+import { getAllPosts } from '../lib/posts'
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const { posts } = await getAllPosts()
   return {
     props: {
-      allPostsData
+      // only return first 10 posts
+      allPostsData: posts.slice(0, 10)
     }
   }
 }
@@ -55,10 +56,10 @@ export default function Home({ allPostsData }) {
                       {meta.date}
                     </span>
                     <div className="text-sm space-x-1 text-gray-500 transition duration-300 delay-100 ease-in-out sm:text-transparent group-hover:text-secondary-500 group-hover:-translate-x-2">
-                      {meta.tags.map(e => (
-                        <Link key={e} href={`/tags/${e}`}>
+                      {meta.tags.map(tag => (
+                        <Link key={tag} href={`/tags/${tag}`}>
                           <a className="hover:text-secondary-600 hover:underline">
-                            #{e}
+                            #{tag}
                           </a>
                         </Link>
                       ))}
