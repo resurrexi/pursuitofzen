@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import ClockIcon from "./icons/clock";
+import ReadTimer from "./read-timer";
 
 function PostList({ children }) {
   return <ul className="px-2">{children}</ul>;
@@ -19,13 +19,12 @@ function PostItem({ slug, meta }) {
           <span className="col-span-3 truncate text-lg font-bold text-gray-700 transition duration-300 ease-in-out sm:text-xl group-hover:text-primary-500 group-hover:translate-x-2">
             {meta.title}
           </span>
-          <div className="flex items-center justify-end text-sm text-gray-500 transition duration-300 ease-in-out sm:text-base sm:text-transparent group-hover:text-gray-500 group-hover:-translate-x-2">
-            <ClockIcon />
-            <span className="ml-1 sm:ml-2">{meta.readTime} min</span>
+          <div className="flex justify-end text-sm text-gray-500 transition duration-300 ease-in-out sm:text-base sm:text-transparent group-hover:text-gray-500 group-hover:-translate-x-2">
+            <ReadTimer readTime={meta.readTime} />
           </div>
         </div>
         <div className="mt-2 flex justify-between">
-          <span className="block text-base text-gray-500 transition duration-300 delay-100 ease-in-out group-hover:translate-x-2">
+          <span className="block text-sm text-gray-500 transition duration-300 delay-100 ease-in-out sm:text-base group-hover:translate-x-2">
             {meta.date}
           </span>
           {meta.tags && meta.tags.length > 0 && (
