@@ -1,13 +1,10 @@
 import { useEffect } from "react";
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import Prism from "prismjs";
 import "prismjs/components/prism-jsx";
 import "prismjs/components/prism-python";
 import "prismjs/plugins/line-numbers/prism-line-numbers";
 import Header from "./header";
-import DarkModeToggler from "./dark-mode-toggler";
 
 export default function Layout({ children, pageTitle }) {
   useEffect(() => {
@@ -41,13 +38,19 @@ export default function Layout({ children, pageTitle }) {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <Header>
-        <Header.Nav />
+        <Header.Nav>
+          <Header.NavMenu>
+            <Header.NavMenuItem link="/blog" label="Blog" />
+            <Header.NavMenuItem link="/works" label="Works" />
+            <Header.NavMenuItem link="/resume" label="Resume" />
+          </Header.NavMenu>
+        </Header.Nav>
       </Header>
       <div className="flex-auto max-w-3xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         {children}
       </div>
       <footer className="flex-none">
-        <div className="border-t border-gray-200 text-gray-500 max-w-3xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+        <div className="border-t border-gray-200 text-gray-500 max-w-3xl mx-auto px-4 py-4 sm:px-6 lg:px-8 dark:text-gray-400 dark:border-gray-600">
           &copy; {new Date().getFullYear()} Pursuit of Zen
         </div>
       </footer>

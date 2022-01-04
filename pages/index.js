@@ -16,7 +16,7 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   return (
     <Layout pageTitle="Personal site of Liquan Yang">
-      <main className="space-y-6 divide-y-2 divide-gray-200 sm:space-y-8">
+      <main className="space-y-6 divide-y-2 divide-gray-200 sm:space-y-8 dark:divide-gray-600">
         <section className="flex flex-col place-items-center">
           <Image
             src="/profile.jpeg"
@@ -25,10 +25,10 @@ export default function Home({ allPostsData }) {
             height={144}
             className="rounded-full"
           />
-          <h1 className="mt-6 text-2xl tracking-tight font-bold text-gray-800 sm:text-3xl">
+          <h1 className="mt-6 text-2xl tracking-tight font-bold text-gray-800 sm:text-3xl dark:text-gray-200">
             Hi, I&apos;m Liquan Yang
           </h1>
-          <p className="mt-4 text-base text-gray-500 leading-relaxed sm:text-lg sm:leading-relaxed">
+          <p className="mt-4 text-base text-gray-500 leading-relaxed sm:text-lg sm:leading-relaxed dark:text-gray-400">
             I&apos;m a geek, musician, adventurer, and most importantly, a
             lifelong student. I like solving challenging problems and learning
             about technologies that I find interesting. I have an interest in
@@ -36,7 +36,7 @@ export default function Home({ allPostsData }) {
             engineering. You can find me on{" "}
             <a
               href="https://stackoverflow.com/users/6245650/scratchnpurr"
-              className="text-primary-600 hover:text-primary-500"
+              className="text-primary-600 hover:text-primary-500 dark:text-primary-500 dark:hover:text-primary-600"
             >
               StackOverflow
             </a>{" "}

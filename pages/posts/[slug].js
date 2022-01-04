@@ -28,12 +28,12 @@ export async function getStaticProps({ params }) {
 export default function Post({ postData }) {
   return (
     <Layout pageTitle={postData.meta.title}>
-      <main className="space-y-6 divide-y-2 divide-gray-200">
+      <main className="space-y-6 divide-y-2 divide-gray-200 dark:divide-gray-600">
         <div className="space-y-2">
-          <h1 className="text-2xl leading-relaxed font-bold tracking-tight text-gray-800">
+          <h1 className="text-2xl leading-relaxed font-bold tracking-tight text-gray-800 dark:text-gray-200">
             {postData.meta.title}
           </h1>
-          <div className="flex justify-between text-gray-500">
+          <div className="flex justify-between text-gray-500 dark:text-gray-400">
             <span className="block">
               <Date dateString={postData.meta.date} />
             </span>
@@ -47,7 +47,7 @@ export default function Post({ postData }) {
                 <a>
                   <button
                     type="button"
-                    className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-secondary-100 text-secondary-800 hover:bg-secondary-200"
+                    className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-secondary-100 text-secondary-800 hover:bg-secondary-200 dark:text-secondary-200 dark:bg-secondary-800 dark:hover:bg-secondary-700"
                   >
                     {e}
                   </button>
@@ -56,7 +56,7 @@ export default function Post({ postData }) {
             ))}
           </div>
         </div>
-        <article className="pt-6 line-numbers prose prose-slate prose-lg max-w-none dark:prose-invert prose-a:text-primary-600 hover:prose-a:text-primary-500">
+        <article className="pt-6 line-numbers prose prose-slate prose-lg max-w-none dark:prose-invert prose-a:text-primary-600 hover:prose-a:text-primary-500 dark:prose-a:text-primary-500 dark:hover:prose-a:text-primary-600">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {postData.content}
           </ReactMarkdown>

@@ -16,22 +16,22 @@ function PostItem({ slug, meta }) {
     >
       <div className="w-full">
         <div className="grid grid-cols-4">
-          <span className="col-span-3 truncate text-lg font-bold text-gray-700 transition duration-300 ease-in-out sm:text-xl group-hover:text-primary-500 group-hover:translate-x-2">
+          <span className="col-span-3 truncate text-lg font-bold text-gray-700 transition duration-300 ease-in-out sm:text-xl group-hover:text-primary-500 group-hover:translate-x-2 dark:text-gray-200 dark:group-hover:text-primary-600">
             {meta.title}
           </span>
-          <div className="flex justify-end text-sm text-gray-500 transition duration-300 ease-in-out sm:text-base sm:text-transparent group-hover:text-gray-500 group-hover:-translate-x-2">
+          <div className="flex justify-end text-sm text-gray-500 transition duration-300 ease-in-out sm:text-base sm:text-transparent group-hover:text-gray-500 group-hover:-translate-x-2 dark:text-gray-400 dark:sm:text-transparent dark:group-hover:text-gray-400">
             <ReadTimer readTime={meta.readTime} />
           </div>
         </div>
         <div className="mt-2 flex justify-between">
-          <span className="block text-sm text-gray-500 transition duration-300 delay-100 ease-in-out sm:text-base group-hover:translate-x-2">
+          <span className="block text-sm text-gray-500 transition duration-300 delay-100 ease-in-out sm:text-base group-hover:translate-x-2 dark:text-gray-400">
             {meta.date}
           </span>
           {meta.tags && meta.tags.length > 0 && (
-            <div className="text-sm space-x-1 text-gray-500 transition duration-300 delay-100 ease-in-out sm:text-transparent group-hover:text-secondary-500 group-hover:-translate-x-2">
+            <div className="text-sm space-x-1 text-gray-500 transition duration-300 delay-100 ease-in-out sm:text-transparent group-hover:text-secondary-500 group-hover:-translate-x-2 dark:text-gray-400 dark:sm:text-transparent dark:group-hover:text-secondary-600">
               {meta.tags.map((tag) => (
                 <Link key={tag} href={`/tags/${tag}`}>
-                  <a className="hover:text-secondary-600 hover:underline">
+                  <a className="hover:text-secondary-600 hover:underline dark:hover:text-secondary-500">
                     #{tag}
                   </a>
                 </Link>
