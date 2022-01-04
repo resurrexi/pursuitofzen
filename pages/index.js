@@ -1,7 +1,6 @@
-import Link from 'next/link'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import Layout from '../components/layout'
+import PostList from '../components/post-list'
 import { getAllPosts } from '../lib/posts'
 
 export async function getStaticProps() {
@@ -15,8 +14,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }) {
-  const router = useRouter()
-
   return (
     <Layout pageTitle="Personal site of Liquan Yang">
       <main className="space-y-6 divide-y-2 divide-gray-200 sm:space-y-8">
@@ -34,43 +31,15 @@ export default function Home({ allPostsData }) {
           </p>
         </section>
         <section className="pt-5">
-          <ul className="px-2">
+          <PostList>
             {allPostsData.map(({ slug, meta }) => (
-              <li key={slug}
-                className="group flex items-center py-3 cursor-pointer"
-                onClick={() => router.push(`/posts/${slug}`)}>
-                <div className="w-full">
-                  <div className="flex justify-between">
-                    <span className="block truncate text-lg font-bold text-gray-700 transition duration-300 ease-in-out sm:text-xl group-hover:text-primary-500 group-hover:translate-x-2">
-                      {meta.title}
-                    </span>
-                    <span className="flex items-center text-base text-gray-500 transition duration-300 ease-in-out sm:text-transparent group-hover:text-gray-500 group-hover:-translate-x-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                      </svg>
-                      {meta.readTime} min
-                    </span>
-                  </div>
-                  <div className="mt-2 flex justify-between">
-                    <span className="block text-base text-gray-500 transition duration-300 delay-100 ease-in-out group-hover:translate-x-2">
-                      {meta.date}
-                    </span>
-                    {meta.tags && meta.tags.length > 0 && (
-                      <div className="text-sm space-x-1 text-gray-500 transition duration-300 delay-100 ease-in-out sm:text-transparent group-hover:text-secondary-500 group-hover:-translate-x-2">
-                        {meta.tags.map(tag => (
-                          <Link key={tag} href={`/tags/${tag}`}>
-                            <a className="hover:text-secondary-600 hover:underline">
-                              #{tag}
-                            </a>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </li>
+              <PostList.Item
+                key={slug}
+                slug={slug}
+                meta={meta}
+              />
             ))}
-          </ul>
+          </PostList>
         </section>
       </main>
     </Layout>
