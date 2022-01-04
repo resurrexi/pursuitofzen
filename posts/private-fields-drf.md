@@ -1,7 +1,7 @@
 ---
-title: 'Implementing private fields in Django Rest Framework'
-date: '2021-04-30'
-tags: ['django', 'drf']
+title: "Implementing private fields in Django Rest Framework"
+date: "2021-04-30"
+tags: ["django", "drf"]
 ---
 
 Django Rest Framework has a pretty robust Permissions API for granting access to resources. However, during development of a role-based application, the need to allow partial access on an instance arose. In other words, the requirement to have certain fields hidden or exposed on an instance arose.
