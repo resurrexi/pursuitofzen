@@ -19,7 +19,7 @@ export default function Layout({ children, pageTitle }) {
     <div className="flex flex-col min-h-screen bg-white transition-colors duration-1000 ease-in-out dark:bg-gray-900">
       <Head>
         <title>Pursuit of Zen - {pageTitle}</title>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Personal website of Liquan Yang" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -39,7 +39,7 @@ export default function Layout({ children, pageTitle }) {
                 <div className="flex-shrink-0 flex items-center">
                   <Link href="/">
                     <a>
-                      <Image src="/android-chrome-192x192.png" alt="logo" width={40} height={40} />
+                      <Image src="/logo.svg" alt="logo" width={40} height={40} />
                     </a>
                   </Link>
                 </div>
