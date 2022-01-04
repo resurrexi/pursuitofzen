@@ -13,5 +13,5 @@ export default function ClockIcon(props) {
         clipRule="evenodd"
       />
     </svg>
-  )
+  );
 }

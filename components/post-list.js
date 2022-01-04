@@ -1,17 +1,13 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import ClockIcon from './icons/clock'
+import Link from "next/link";
+import { useRouter } from "next/router";
+import ClockIcon from "./icons/clock";
 
 function PostList({ children }) {
-  return (
-    <ul className="px-2">
-      {children}
-    </ul>
-  )
+  return <ul className="px-2">{children}</ul>;
 }
 
 function PostItem({ slug, meta }) {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <li
@@ -25,9 +21,7 @@ function PostItem({ slug, meta }) {
           </span>
           <div className="flex items-center text-base text-gray-500 transition duration-300 ease-in-out sm:text-transparent group-hover:text-gray-500 group-hover:-translate-x-2">
             <ClockIcon />
-            <span className="ml-2">
-              {meta.readTime} min
-            </span>
+            <span className="ml-2">{meta.readTime} min</span>
           </div>
         </div>
         <div className="mt-2 flex justify-between">
@@ -36,7 +30,7 @@ function PostItem({ slug, meta }) {
           </span>
           {meta.tags && meta.tags.length > 0 && (
             <div className="text-sm space-x-1 text-gray-500 transition duration-300 delay-100 ease-in-out sm:text-transparent group-hover:text-secondary-500 group-hover:-translate-x-2">
-              {meta.tags.map(tag => (
+              {meta.tags.map((tag) => (
                 <Link key={tag} href={`/tags/${tag}`}>
                   <a className="hover:text-secondary-600 hover:underline">
                     #{tag}
@@ -48,9 +42,9 @@ function PostItem({ slug, meta }) {
         </div>
       </div>
     </li>
-  )
+  );
 }
 
-PostList.Item = PostItem
+PostList.Item = PostItem;
 
-export default PostList
+export default PostList;

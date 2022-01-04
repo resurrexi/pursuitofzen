@@ -1,28 +1,28 @@
-import { useEffect, useState } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import Prism from 'prismjs'
-import 'prismjs/components/prism-jsx'
-import 'prismjs/components/prism-python'
-import 'prismjs/plugins/line-numbers/prism-line-numbers'
-import { useTheme } from 'next-themes'
-import SunIcon from '../components/icons/sun'
-import MoonIcon from '../components/icons/moon'
+import { useEffect, useState } from "react";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import Prism from "prismjs";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-python";
+import "prismjs/plugins/line-numbers/prism-line-numbers";
+import { useTheme } from "next-themes";
+import SunIcon from "../components/icons/sun";
+import MoonIcon from "../components/icons/moon";
 
 export default function Layout({ children, pageTitle }) {
-  const { resolvedTheme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme();
 
   // hack for client/server mismatch
   // https://stackoverflow.com/a/56525858/6245650
-  const [loaded, setLoaded] = useState(false)
+  const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    setLoaded(true)
-  }, [])
+    setLoaded(true);
+  }, []);
 
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <div className="flex flex-col min-h-screen bg-white transition-colors duration-1000 ease-in-out dark:bg-gray-900">
@@ -31,15 +31,29 @@ export default function Layout({ children, pageTitle }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Personal website of Liquan Yang" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <link rel="manifest" href="/site.webmanifest" />
         <link
           href={
-            loaded && resolvedTheme === "light" ?
-              "/themes/prism-one-light.css" :
-              "/themes/prism-one-dark.css"
+            loaded && resolvedTheme === "light"
+              ? "/themes/prism-one-light.css"
+              : "/themes/prism-one-dark.css"
           }
           rel="stylesheet"
         />
@@ -52,7 +66,12 @@ export default function Layout({ children, pageTitle }) {
                 <div className="flex-shrink-0 flex items-center">
                   <Link href="/">
                     <a>
-                      <Image src="/logo.svg" alt="logo" width={40} height={40} />
+                      <Image
+                        src="/logo.svg"
+                        alt="logo"
+                        width={40}
+                        height={40}
+                      />
                     </a>
                   </Link>
                 </div>
@@ -107,9 +126,9 @@ export default function Layout({ children, pageTitle }) {
       </div>
       <footer className="flex-none">
         <div className="border-t border-gray-200 text-gray-500 max-w-3xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
-          &copy; {(new Date()).getFullYear()} Pursuit of Zen
+          &copy; {new Date().getFullYear()} Pursuit of Zen
         </div>
       </footer>
     </div>
-  )
+  );
 }
