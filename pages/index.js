@@ -33,11 +33,11 @@ export default function Home({ allPostsData }) {
             I occasionally help others with their coding problems.
           </p>
         </section>
-        <section className="pt-2">
+        <section className="pt-5">
           <ul className="px-2">
             {allPostsData.map(({ slug, meta }) => (
               <li key={slug}
-                className="group flex items-center py-8 cursor-pointer"
+                className="group flex items-center py-3 cursor-pointer"
                 onClick={() => router.push(`/posts/${slug}`)}>
                 <div className="w-full">
                   <div className="flex justify-between">
@@ -55,15 +55,17 @@ export default function Home({ allPostsData }) {
                     <span className="block text-base text-gray-500 transition duration-300 delay-100 ease-in-out group-hover:translate-x-2">
                       {meta.date}
                     </span>
-                    <div className="text-sm space-x-1 text-gray-500 transition duration-300 delay-100 ease-in-out sm:text-transparent group-hover:text-secondary-500 group-hover:-translate-x-2">
-                      {meta.tags.map(tag => (
-                        <Link key={tag} href={`/tags/${tag}`}>
-                          <a className="hover:text-secondary-600 hover:underline">
-                            #{tag}
-                          </a>
-                        </Link>
-                      ))}
-                    </div>
+                    {meta.tags && meta.tags.length > 0 && (
+                      <div className="text-sm space-x-1 text-gray-500 transition duration-300 delay-100 ease-in-out sm:text-transparent group-hover:text-secondary-500 group-hover:-translate-x-2">
+                        {meta.tags.map(tag => (
+                          <Link key={tag} href={`/tags/${tag}`}>
+                            <a className="hover:text-secondary-600 hover:underline">
+                              #{tag}
+                            </a>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </li>
