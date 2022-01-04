@@ -34,10 +34,10 @@ export default function Home({ allPostsData }) {
         </section>
         <section className="pt-2">
           <ul className="px-2">
-            {allPostsData.map(({ id, meta }) => (
-              <li key={id}
+            {allPostsData.map(({ slug, meta }) => (
+              <li key={slug}
                 className="group flex items-center py-8 cursor-pointer"
-                onClick={() => router.push(`/posts/${id}`)}>
+                onClick={() => router.push(`/posts/${slug}`)}>
                 <div className="w-full">
                   <div className="flex justify-between">
                     <span className="block truncate text-lg font-bold text-gray-700 transition duration-300 ease-in-out sm:text-xl group-hover:text-primary-500 group-hover:translate-x-2">
