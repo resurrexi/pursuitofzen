@@ -1,4 +1,4 @@
-const colors = require("tailwindcss/colors")
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: [
@@ -13,12 +13,11 @@ module.exports = {
       primary: colors.cyan,
       secondary: colors.violet,
       gray: colors.slate,
+      neutral: colors.neutral,
       white: colors.white,
       amber: colors.amber,
     },
     extend: {},
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-  ],
-}
+  plugins: [require("@tailwindcss/typography")],
+};

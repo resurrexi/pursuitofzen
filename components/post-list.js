@@ -15,13 +15,13 @@ function PostItem({ slug, meta }) {
       onClick={() => router.push(`/posts/${slug}`)}
     >
       <div className="w-full">
-        <div className="flex justify-between">
-          <span className="block truncate text-lg font-bold text-gray-700 transition duration-300 ease-in-out sm:text-xl group-hover:text-primary-500 group-hover:translate-x-2">
+        <div className="grid grid-cols-4">
+          <span className="col-span-3 truncate text-lg font-bold text-gray-700 transition duration-300 ease-in-out sm:text-xl group-hover:text-primary-500 group-hover:translate-x-2">
             {meta.title}
           </span>
-          <div className="flex items-center text-base text-gray-500 transition duration-300 ease-in-out sm:text-transparent group-hover:text-gray-500 group-hover:-translate-x-2">
+          <div className="flex items-center justify-end text-sm text-gray-500 transition duration-300 ease-in-out sm:text-base sm:text-transparent group-hover:text-gray-500 group-hover:-translate-x-2">
             <ClockIcon />
-            <span className="ml-2">{meta.readTime} min</span>
+            <span className="ml-1 sm:ml-2">{meta.readTime} min</span>
           </div>
         </div>
         <div className="mt-2 flex justify-between">

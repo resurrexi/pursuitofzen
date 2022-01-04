@@ -25,7 +25,7 @@ export default function Layout({ children, pageTitle }) {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white transition-colors duration-1000 ease-in-out dark:bg-gray-900">
+    <div className="flex flex-col min-h-screen bg-white transition-colors duration-1000 ease-in-out dark:bg-neutral-900">
       <Head>
         <title>Pursuit of Zen - {pageTitle}</title>
         <meta charSet="utf-8" />
@@ -121,7 +121,7 @@ export default function Layout({ children, pageTitle }) {
           </div>
         </nav>
       </header>
-      <div className="grow max-w-3xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+      <div className="flex-auto max-w-3xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         {children}
       </div>
       <footer className="flex-none">
