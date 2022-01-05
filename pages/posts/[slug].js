@@ -4,10 +4,16 @@ import remarkGfm from "remark-gfm";
 import Layout from "../../components/layout";
 import Date from "../../components/date";
 import ReadTimer from "../../components/read-timer";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getPostSlugs, getPostData } from "../../lib/posts";
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds();
+  const paths = getPostSlugs().map((slug) => {
+    return {
+      params: {
+        slug,
+      },
+    };
+  });
 
   return {
     paths,
