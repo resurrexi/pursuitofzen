@@ -34,12 +34,8 @@ export default function Post({ postData }) {
             {postData.meta.title}
           </h1>
           <div className="flex justify-between text-gray-500 dark:text-gray-400">
-            <span className="block">
-              <Date dateString={postData.meta.date} />
-            </span>
-            <div>
-              <ReadTimer readTime={postData.meta.readTime} />
-            </div>
+            <Date dateString={postData.meta.date} />
+            <ReadTimer readTime={postData.meta.readTime} />
           </div>
           <div className="space-x-2">
             {postData.meta.tags.map((e) => (
@@ -56,7 +52,7 @@ export default function Post({ postData }) {
             ))}
           </div>
         </div>
-        <article className="pt-6 line-numbers prose prose-slate prose-lg max-w-none dark:prose-invert prose-a:text-primary-600 hover:prose-a:text-primary-500 dark:prose-a:text-primary-500 dark:hover:prose-a:text-primary-600">
+        <article className="line-numbers pt-6 prose prose-slate prose-lg max-w-none dark:prose-invert prose-code:text-base prose-a:text-primary-600 hover:prose-a:text-primary-500 dark:prose-a:text-primary-500 dark:hover:prose-a:text-primary-600">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {postData.content}
           </ReactMarkdown>
