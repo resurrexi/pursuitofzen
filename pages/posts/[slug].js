@@ -43,20 +43,22 @@ export default function Post({ postData }) {
             <Date dateString={postData.meta.date} />
             <ReadTimer readTime={postData.meta.readTime} />
           </div>
-          <div className="space-x-2">
-            {postData.meta.tags.map((e) => (
-              <Link key={e} href={`/tags/${e}`}>
-                <a>
-                  <button
-                    type="button"
-                    className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-secondary-100 text-secondary-800 hover:bg-secondary-200 dark:text-secondary-200 dark:bg-secondary-800 dark:hover:bg-secondary-700"
-                  >
-                    {e}
-                  </button>
-                </a>
-              </Link>
-            ))}
-          </div>
+          {postData.meta.tags && postData.meta.tags.length > 0 && (
+            <div className="space-x-2">
+              {postData.meta.tags.map((e) => (
+                <Link key={e} href={`/tags/${e}`}>
+                  <a>
+                    <button
+                      type="button"
+                      className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-secondary-100 text-secondary-800 hover:bg-secondary-200 dark:text-secondary-200 dark:bg-secondary-800 dark:hover:bg-secondary-700"
+                    >
+                      {e}
+                    </button>
+                  </a>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
         {/* article element below must have "grid grid-cols-1" for mobile responsiveness */}
         <article className="line-numbers grid grid-cols-1 pt-6 prose prose-slate max-w-3xl dark:prose-invert prose-a:text-primary-600 hover:prose-a:text-primary-500 dark:prose-a:text-primary-500 dark:hover:prose-a:text-primary-600">
