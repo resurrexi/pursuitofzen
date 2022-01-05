@@ -52,7 +52,8 @@ export default function Post({ postData }) {
             ))}
           </div>
         </div>
-        <article className="line-numbers pt-6 prose prose-slate prose-lg max-w-none dark:prose-invert prose-code:text-base prose-a:text-primary-600 hover:prose-a:text-primary-500 dark:prose-a:text-primary-500 dark:hover:prose-a:text-primary-600">
+        {/* article element below must have "grid grid-cols-1" for mobile responsiveness */}
+        <article className="line-numbers grid grid-cols-1 pt-6 prose prose-slate max-w-3xl dark:prose-invert prose-a:text-primary-600 hover:prose-a:text-primary-500 dark:prose-a:text-primary-500 dark:hover:prose-a:text-primary-600">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {postData.content}
           </ReactMarkdown>
