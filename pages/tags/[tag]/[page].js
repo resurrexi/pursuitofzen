@@ -50,7 +50,7 @@ export async function getStaticProps({ params }) {
 export default function TagPage({ tag, posts, page, total }) {
   return (
     <Layout pageTitle={`Browse by ${tag}`}>
-      <main>
+      <main className="min-w-[80vw] sm:min-w-[85vw] md:min-w-[42rem]">
         <PostList>
           {posts.map(({ slug, meta }) => (
             <PostList.Item key={slug} slug={slug} meta={meta} />

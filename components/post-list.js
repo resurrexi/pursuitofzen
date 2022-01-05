@@ -14,7 +14,7 @@ function PostItem({ slug, meta }) {
       className="group flex items-center py-3 cursor-pointer"
       onClick={() => router.push(`/posts/${slug}`)}
     >
-      <div className="w-full min-w-[80vw] sm:min-w-[85vw] md:min-w-[42rem]">
+      <div className="w-full">
         <div className="grid grid-cols-4">
           <span className="col-span-3 truncate text-lg font-bold text-gray-700 transition duration-300 ease-in-out sm:text-xl group-hover:text-primary-500 group-hover:translate-x-2 dark:text-gray-200 dark:group-hover:text-primary-600">
             {meta.title}
