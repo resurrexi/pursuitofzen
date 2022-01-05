@@ -17,7 +17,14 @@ module.exports = {
       white: colors.white,
       amber: colors.amber,
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        revspin: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(-360deg)" },
+        },
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };

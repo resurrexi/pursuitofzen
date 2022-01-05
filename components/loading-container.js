@@ -9,7 +9,7 @@ export default function LoadingContainer() {
           alt="loading..."
           width={45}
           height={45}
-          className="animate-spin"
+          className="animate-[revspin_1s_ease-in-out_infinite]"
         />
       </div>
     </div>
