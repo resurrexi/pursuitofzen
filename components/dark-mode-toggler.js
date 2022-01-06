@@ -29,7 +29,7 @@ export default function DarkModeToggler() {
       {loaded && resolvedTheme === "light" ? (
         <button
           type="button"
-          className="group p-1 text-amber-600 focus:outline-none"
+          className="group p-2 text-amber-600 focus:outline-none"
           onClick={() => setTheme("dark")}
         >
           <MoonIcon className="h-5 w-5 transition duration-300 ease-in-out group-hover:scale-125" />
@@ -37,7 +37,7 @@ export default function DarkModeToggler() {
       ) : (
         <button
           type="button"
-          className="group p-1 text-amber-500 focus:outline-none"
+          className="group p-2 text-amber-500 focus:outline-none"
           onClick={() => setTheme("light")}
         >
           <SunIcon className="h-5 w-5 transition duration-300 ease-in-out group-hover:scale-125" />
