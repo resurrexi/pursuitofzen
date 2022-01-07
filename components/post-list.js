@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import ReadTimer from "./read-timer";
 
 function PostList({ children }) {
-  return <ul className="px-2">{children}</ul>;
+  return <ul>{children}</ul>;
 }
 
 function PostItem({ slug, meta }) {

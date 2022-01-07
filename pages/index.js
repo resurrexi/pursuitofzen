@@ -50,13 +50,11 @@ export default function Home({ allPostsData }) {
           </p>
         </section>
         <section className="pt-5">
-          <div className="min-w-[80vw] sm:min-w-[85vw] md:min-w-[42rem]">
-            <PostList>
-              {allPostsData.map(({ slug, meta }) => (
-                <PostList.Item key={slug} slug={slug} meta={meta} />
-              ))}
-            </PostList>
-          </div>
+          <PostList>
+            {allPostsData.map(({ slug, meta }) => (
+              <PostList.Item key={slug} slug={slug} meta={meta} />
+            ))}
+          </PostList>
         </section>
       </main>
     </Layout>

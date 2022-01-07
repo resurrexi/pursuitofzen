@@ -69,7 +69,6 @@ export default function Layout({ children, pageTitle }) {
           <Header.Nav>
             <Header.NavMenu>
               <Header.NavMenuItem link="/blog" label="Blog" />
-              <Header.NavMenuItem link="/works" label="Works" />
               <Header.NavMenuItem link="/resume" label="Resume" />
             </Header.NavMenu>
           </Header.Nav>
