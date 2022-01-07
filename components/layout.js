@@ -35,8 +35,8 @@ export default function Layout({ children, pageTitle }) {
     <NavContext.Provider value={menuContext}>
       <div
         className={`${
-          menuOpened && "max-h-screen"
-        } flex flex-col overflow-hidden min-h-screen bg-white transition-colors duration-1000 ease-in-out dark:bg-neutral-900 sm:overflow-auto sm:max-h-full`}
+          menuOpened ? "max-h-screen" : ""
+        }flex flex-col overflow-hidden min-h-screen bg-white transition-colors duration-1000 ease-in-out dark:bg-neutral-900 sm:overflow-auto sm:max-h-full`}
       >
         <Head>
           <title>Pursuit of Zen - {pageTitle}</title>
@@ -77,8 +77,10 @@ export default function Layout({ children, pageTitle }) {
         {!loaded ? (
           <LoadingContainer />
         ) : (
-          <div className="flex-auto max-w-3xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-            {children}
+          <div className="flex flex-auto justify-center py-8">
+            <div className="w-full max-w-3xl px-4 sm:px-6 lg:px-8">
+              {children}
+            </div>
           </div>
         )}
         <footer className="flex-none">

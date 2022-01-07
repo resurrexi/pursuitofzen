@@ -44,7 +44,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   let resolvedPage = 1;
+
+  // getAllPosts will return array [{tag, posts, total}]
+  // since it's fetching by tags
   const allPosts = await getAllPosts(true);
+
   const tagData = allPosts.find((tagPost) => tagPost.tag === params.tag);
 
   if (params.page && params.page.length > 0) {
@@ -79,8 +83,8 @@ export default function TagPage({ tag, posts, currentPage, totalPages }) {
   }, [currentPage, tag, router]);
 
   return (
-    <Layout pageTitle={`Browse by ${tag}`}>
-      <main className="min-w-[80vw] sm:min-w-[85vw] md:min-w-[42rem]">
+    <Layout pageTitle={`Blog posts by ${tag}`}>
+      <main className="block w-full">
         {posts && posts.length > 0 && (
           <PostList>
             {posts.map(({ slug, meta }) => (
