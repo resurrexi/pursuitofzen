@@ -78,7 +78,7 @@ export default function TagPage({ tag, posts, currentPage, totalPages }) {
   useEffect(() => {
     // if currentPage is 0, then page param is invalid
     if (currentPage === 0) {
-      router.replace("/tags/[tag]", `/tags/${tag}`);
+      router.replace(`/tags/${tag}`);
     }
   }, [currentPage, tag, router]);
 
