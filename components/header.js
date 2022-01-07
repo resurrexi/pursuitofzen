@@ -69,7 +69,7 @@ function NavMenu({ children }) {
       {menuOpened && (
         // 4rem in the height calculation corresponds to h-16 that is set by the navbar
         <div
-          className="absolute backdrop-blur-md left-0 top-full px-4 bg-white/50 w-screen h-[calc(100vh-4rem)] border-t border-gray-200 sm:hidden dark:bg-neutral-900/50 dark:border-gray-600"
+          className="absolute z-50 backdrop-blur-md left-0 top-full px-4 bg-white/50 w-screen h-[calc(100vh-4rem)] border-t border-gray-200 sm:hidden dark:bg-neutral-900/50 dark:border-gray-600"
           id="mobile-menu"
         >
           <div className="py-6 block h-full flex flex-col justify-between">

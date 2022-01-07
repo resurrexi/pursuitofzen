@@ -1,4 +1,4 @@
-export default function HorizontalDots(props) {
+export default function HorizontalDotsIcon(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,4 @@
-export default function ChevronLeft(props) {
+export default function ChevronLeftIcon(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
