@@ -1,10 +1,10 @@
 import { useCallback } from "react";
 import { useRouter } from "next/router";
-import ChevronL from "./icons/chevron-left";
-import ChevronR from "./icons/chevron-right";
-import ChevronLL from "./icons/chevron-double-left";
-import ChevronRR from "./icons/chevron-double-right";
-import Dots from "./icons/horizontal-dots";
+import ChevronLIcon from "./icons/chevron-left";
+import ChevronRIcon from "./icons/chevron-right";
+import ChevronLLIcon from "./icons/chevron-double-left";
+import ChevronRRIcon from "./icons/chevron-double-right";
+import DotsIcon from "./icons/horizontal-dots";
 import { useToggle } from "../lib/hooks/useToggle";
 
 export function MobileButton({ children, ...rest }) {
@@ -64,12 +64,12 @@ export default function Paginator({ basePath, currentPage, totalPages }) {
       >
         {currentPage > 1 && (
           <MobileButton onClick={() => goToPage(currentPage - 1)}>
-            <ChevronL />
+            <ChevronLIcon />
           </MobileButton>
         )}
         {currentPage < totalPages && (
           <MobileButton onClick={() => goToPage(currentPage + 1)}>
-            <ChevronR />
+            <ChevronRIcon />
           </MobileButton>
         )}
       </div>
@@ -79,7 +79,7 @@ export default function Paginator({ basePath, currentPage, totalPages }) {
             <>
               <PageIconButton onClick={() => goToPage(currentPage - 1)}>
                 <span className="sr-only">Previous</span>
-                <ChevronL />
+                <ChevronLIcon />
               </PageIconButton>
               <PageButton onClick={() => goToPage(1)}>1</PageButton>
             </>
@@ -94,7 +94,7 @@ export default function Paginator({ basePath, currentPage, totalPages }) {
               onMouseLeave={() => setBackHovered(false)}
             >
               <span className="sr-only">Back 5</span>
-              {backHovered ? <ChevronLL /> : <Dots />}
+              {backHovered ? <ChevronLLIcon /> : <DotsIcon />}
             </PageButton>
           )}
           {currentPage >= 4 && (
@@ -130,7 +130,7 @@ export default function Paginator({ basePath, currentPage, totalPages }) {
               onMouseLeave={() => setForwardHovered(false)}
             >
               <span className="sr-only">Forward 5</span>
-              {forwardHovered ? <ChevronRR /> : <Dots />}
+              {forwardHovered ? <ChevronRRIcon /> : <DotsIcon />}
             </PageButton>
           )}
           {totalPages - 4 == currentPage && (
@@ -145,7 +145,7 @@ export default function Paginator({ basePath, currentPage, totalPages }) {
               </PageButton>
               <PageIconButton onClick={() => goToPage(currentPage + 1)}>
                 <span className="sr-only">Next</span>
-                <ChevronR />
+                <ChevronRIcon />
               </PageIconButton>
             </>
           )}
