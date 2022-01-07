@@ -27,7 +27,7 @@ function ExperienceItem({
           </span>
         </span>
         <span className="min-w-0 flex flex-col sm:ml-4">
-          <span className="flex flex-col sm:inline sm:space-x-2 sm:divide-x-2 sm:divide-gray-200 dark:divide-gray-800">
+          <span className="flex flex-col sm:inline-block sm:space-x-2 sm:divide-x-2 sm:divide-gray-200 dark:divide-gray-700">
             <span className="text-sm font-semibold uppercase text-gray-900 sm:text-base dark:text-gray-100">
               {primary}
             </span>
