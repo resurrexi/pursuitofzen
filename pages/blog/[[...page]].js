@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../components/layout";
 import PostList from "../../components/post-list";
+import Paginator from "../../components/paginator";
 import { getAllPosts } from "../../lib/posts";
 
 const PAGE_SIZE = 10;
@@ -82,6 +83,15 @@ export default function BlogPage({ posts, currentPage, totalPages }) {
               <PostList.Item key={slug} slug={slug} meta={meta} />
             ))}
           </PostList>
+        )}
+        {currentPage > 0 && totalPages > 1 && (
+          <div className="mt-8 block w-full">
+            <Paginator
+              basePath="/blog"
+              currentPage={currentPage}
+              totalPages={totalPages}
+            />
+          </div>
         )}
       </main>
     </Layout>
