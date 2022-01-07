@@ -1,19 +1,23 @@
 import Image from "next/image";
+import Link from "next/link";
 import Layout from "../components/layout";
 import PostList from "../components/post-list";
 import { getAllPosts } from "../lib/posts";
 
+const PAGE_SIZE = 5;
+
 export async function getStaticProps() {
-  const { posts } = await getAllPosts();
+  const { posts, total } = await getAllPosts();
   return {
     props: {
-      // only return first 10 posts
-      allPostsData: posts.slice(0, 10),
+      // only return first `PAGE_SIZE` posts
+      posts: posts.slice(0, PAGE_SIZE),
+      total,
     },
   };
 }
 
-export default function Home({ allPostsData }) {
+export default function Home({ posts, total }) {
   return (
     <Layout pageTitle="Personal site of Liquan Yang">
       <main className="space-y-6 divide-y-2 divide-gray-200 sm:space-y-8 dark:divide-gray-600">
@@ -51,10 +55,19 @@ export default function Home({ allPostsData }) {
         </section>
         <section className="pt-5">
           <PostList>
-            {allPostsData.map(({ slug, meta }) => (
+            {posts.map(({ slug, meta }) => (
               <PostList.Item key={slug} slug={slug} meta={meta} />
             ))}
           </PostList>
+          {total > PAGE_SIZE && (
+            <div className="mt-8 flex justify-center w-full">
+              <Link href="/blog">
+                <a className="text-primary-600 text-base font-medium hover:text-primary-500 dark:text-primary-500 dark:hover:text-primary-600">
+                  View more
+                </a>
+              </Link>
+            </div>
+          )}
         </section>
       </main>
     </Layout>

@@ -7,7 +7,7 @@ import ChevronRR from "./icons/chevron-double-right";
 import Dots from "./icons/horizontal-dots";
 import { useToggle } from "../lib/hooks/useToggle";
 
-function MobileButton({ children, ...rest }) {
+export function MobileButton({ children, ...rest }) {
   return (
     <button
       type="button"
@@ -19,7 +19,7 @@ function MobileButton({ children, ...rest }) {
   );
 }
 
-function PageButton({ children, ...rest }) {
+export function PageButton({ children, ...rest }) {
   return (
     <button
       type="button"
@@ -31,7 +31,7 @@ function PageButton({ children, ...rest }) {
   );
 }
 
-function PageIconButton({ children, ...rest }) {
+export function PageIconButton({ children, ...rest }) {
   return (
     <button
       type="button"

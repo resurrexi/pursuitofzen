@@ -5,7 +5,7 @@ import PostList from "../../components/post-list";
 import Paginator from "../../components/paginator";
 import { getAllPosts } from "../../lib/posts";
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 9;
 
 export async function getStaticPaths() {
   const allPosts = await getAllPosts();
