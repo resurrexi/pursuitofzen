@@ -3,8 +3,8 @@ import CheckIcon from "./icons/check";
 
 function ExperienceList({ children }) {
   return (
-    <nav>
-      <ol role="list" className="overflow-hidden">
+    <nav className="py-1">
+      <ol role="list" className="overflow-hidden space-y-6">
         {children}
       </ol>
     </nav>
@@ -17,10 +17,9 @@ function ExperienceItem({
   tertiary,
   dates,
   descriptionList,
-  isLast,
 }) {
   return (
-    <li className={`${!isLast ? "pb-6" : ""} relative`}>
+    <li className="relative">
       <div className="relative flex items-start">
         <span className="h-9 flex items-center">
           <span className="hidden relative z-10 w-5 h-5 sm:flex sm:items-center sm:justify-center">
@@ -28,7 +27,7 @@ function ExperienceItem({
           </span>
         </span>
         <span className="min-w-0 flex flex-col sm:ml-4">
-          <span className="flex flex-col sm:inline-block sm:space-x-2 sm:divide-x-2 sm:divide-gray-200 dark:divide-gray-800">
+          <span className="flex flex-col sm:inline sm:space-x-2 sm:divide-x-2 sm:divide-gray-200 dark:divide-gray-800">
             <span className="text-sm font-semibold uppercase text-gray-900 sm:text-base dark:text-gray-100">
               {primary}
             </span>
