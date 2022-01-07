@@ -146,7 +146,7 @@ export default function Resume() {
             <ExperienceList>
               <ExperienceList.Item
                 primary="Shiny, Prophet, and Video Game KPIs"
-                secondary="Nordic Data Science & Machine Learning Summit"
+                secondary="Nordic DS & ML Summit"
                 dates="2018/10"
               />
             </ExperienceList>
