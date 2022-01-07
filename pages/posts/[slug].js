@@ -6,6 +6,17 @@ import Date from "../../components/date";
 import ReadTimer from "../../components/read-timer";
 import { getPostSlugs, getPostData } from "../../lib/posts";
 
+function TagPill({ children }) {
+  return (
+    <button
+      type="button"
+      className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-secondary-100 text-secondary-800 transition-colors duration-1000 ease-in-out hover:bg-secondary-200 dark:text-secondary-200 dark:bg-secondary-800 dark:hover:bg-secondary-700"
+    >
+      {children}
+    </button>
+  );
+}
+
 export async function getStaticPaths() {
   const paths = getPostSlugs().map((slug) => {
     return {
@@ -48,12 +59,7 @@ export default function Post({ postData }) {
               {postData.meta.tags.map((e) => (
                 <Link key={e} href={`/tags/${e}`}>
                   <a>
-                    <button
-                      type="button"
-                      className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-secondary-100 text-secondary-800 hover:bg-secondary-200 dark:text-secondary-200 dark:bg-secondary-800 dark:hover:bg-secondary-700"
-                    >
-                      {e}
-                    </button>
+                    <TagPill>{e}</TagPill>
                   </a>
                 </Link>
               ))}

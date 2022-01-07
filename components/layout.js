@@ -36,7 +36,7 @@ export default function Layout({ children, pageTitle }) {
       <div
         className={`${
           menuOpened ? "max-h-screen" : ""
-        }flex flex-col overflow-hidden min-h-screen bg-white transition-colors duration-1000 ease-in-out dark:bg-neutral-900 sm:overflow-auto sm:max-h-full`}
+        } flex flex-col overflow-hidden min-h-screen bg-white transition-colors duration-1000 ease-in-out dark:bg-neutral-900 sm:overflow-auto sm:max-h-full`}
       >
         <Head>
           <title>Pursuit of Zen - {pageTitle}</title>
