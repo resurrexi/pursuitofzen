@@ -6,6 +6,7 @@ import ChevronLLIcon from "./icons/chevron-double-left";
 import ChevronRRIcon from "./icons/chevron-double-right";
 import DotsIcon from "./icons/horizontal-dots";
 import { useToggle } from "../lib/hooks/useToggle";
+import { joinClasses } from "../lib/utils";
 
 export function MobileButton({ children, ...rest }) {
   return (
@@ -58,9 +59,10 @@ export default function Paginator({ basePath, currentPage, totalPages }) {
   return (
     <div className="py-3 flex items-center justify-between">
       <div
-        className={`${
-          currentPage > 1 ? "justify-between" : "justify-end"
-        } flex-auto flex sm:hidden`}
+        className={joinClasses(
+          currentPage > 1 ? "justify-between" : "justify-end",
+          "flex-auto flex sm:hidden",
+        )}
       >
         {currentPage > 1 && (
           <MobileButton onClick={() => goToPage(currentPage - 1)}>

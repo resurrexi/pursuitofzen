@@ -24,7 +24,7 @@ function SocialLink({ icon, href }) {
   return (
     <a
       href={href}
-      className="inline-block p-2 hover:text-primary-500 dark:text-primary-600"
+      className="inline-block p-2 hover:text-primary-500 dark:hover:text-primary-600"
     >
       {icon}
     </a>

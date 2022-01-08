@@ -4,6 +4,7 @@ import Image from "next/image";
 import DarkModeToggler from "./dark-mode-toggler";
 import HamburgerMenuIcon from "./icons/hamburger";
 import CloseIcon from "./icons/close";
+import { joinClasses } from "../lib/utils";
 
 const NavContext = createContext();
 
@@ -40,9 +41,10 @@ function NavMenu({ children }) {
 
   return (
     <div
-      className={`${
-        menuOpened ? "min-h-screen" : ""
-      } z-50 flex flex-col fixed top-0 inset-x-0 backdrop-blur-md max-w-3xl mx-auto px-4 border-b border-gray-200 sm:px-6 lg:px-8 sm:min-h-fit dark:border-gray-600`}
+      className={joinClasses(
+        menuOpened && "min-h-screen",
+        "z-50 flex flex-col fixed top-0 inset-x-0 backdrop-blur-md max-w-3xl mx-auto px-4 border-b border-gray-200 sm:px-6 lg:px-8 sm:min-h-fit dark:border-gray-600",
+      )}
     >
       <div className="flex flex-none justify-between h-16">
         <div className="flex">
@@ -77,9 +79,10 @@ function NavMenu({ children }) {
           4rem in the height calculation corresponds to h-16 that is set by the navbar
         */}
       <div
-        className={`${
-          menuOpened ? "flex flex-col" : "hidden"
-        } flex-auto sm:hidden`}
+        className={joinClasses(
+          menuOpened ? "flex flex-col" : "hidden",
+          "flex-auto sm:hidden",
+        )}
         id="mobile-menu"
       >
         <div className="py-6 block h-full flex flex-auto flex-col justify-between">
