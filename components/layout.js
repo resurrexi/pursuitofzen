@@ -8,6 +8,10 @@ import "prismjs/plugins/line-numbers/prism-line-numbers";
 import Header from "./header";
 import { NavContext, useMenuToggle } from "./header";
 import LoadingContainer from "./loading-container";
+import Footer from "./footer";
+import LinkedInIcon from "./icons/linkedin";
+import GithubIcon from "./icons/github";
+import StackOverflowIcon from "./icons/stackoverflow";
 
 export default function Layout({ children, pageTitle }) {
   const [loaded, setLoaded] = useState(false);
@@ -82,11 +86,23 @@ export default function Layout({ children, pageTitle }) {
             </div>
           </div>
         )}
-        <footer className="flex-none">
-          <div className="border-t border-gray-200 text-gray-500 max-w-3xl mx-auto px-4 py-4 sm:px-6 lg:px-8 dark:text-gray-400 dark:border-gray-600">
-            &copy; {new Date().getFullYear()} Pursuit of Zen
-          </div>
-        </footer>
+        <Footer>
+          <Footer.Copyright siteName="Pursuit of Zen" />
+          <Footer.SocialBar>
+            <Footer.SocialLink
+              icon={<GithubIcon />}
+              href="https://github.com/resurrexi"
+            />
+            <Footer.SocialLink
+              icon={<StackOverflowIcon />}
+              href="https://stackoverflow.com/users/6245650/scratchnpurr"
+            />
+            <Footer.SocialLink
+              icon={<LinkedInIcon />}
+              href="https://www.linkedin.com/in/yliquan/"
+            />
+          </Footer.SocialBar>
+        </Footer>
       </div>
     </NavContext.Provider>
   );

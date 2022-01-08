@@ -87,7 +87,7 @@ function NavMenu({ children }) {
 function NavMenuItem({ link, label }) {
   return (
     <Link href={link}>
-      <a className="block py-2 text-gray-500 items-center font-bold text-lg sm:text-base sm:inline-flex hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-600">
+      <a className="block py-2 text-gray-500 items-center font-semibold text-lg sm:inline-flex hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-600">
         {label}
       </a>
     </Link>

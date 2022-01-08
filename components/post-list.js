@@ -17,8 +17,8 @@ function PostItem({ slug, meta }) {
       <div className="w-full">
         <Link href={`/posts/${slug}`}>
           <a>
-            <div className="grid grid-cols-4">
-              <span className="col-span-3 truncate text-lg font-bold text-gray-700 transition duration-300 ease-in-out sm:text-xl group-hover:text-primary-500 group-hover:translate-x-2 dark:text-gray-200 dark:group-hover:text-primary-600">
+            <div className="grid grid-cols-4 gap-3">
+              <span className="col-span-3 truncate text-lg font-semibold text-gray-700 transition duration-300 ease-in-out sm:text-xl group-hover:text-primary-500 group-hover:translate-x-2 dark:text-gray-200 dark:group-hover:text-primary-600">
                 {meta.title}
               </span>
               <div className="flex justify-end text-sm text-gray-500 transition duration-300 ease-in-out sm:text-base sm:text-transparent group-hover:text-gray-500 group-hover:-translate-x-2 dark:text-gray-400 dark:sm:text-transparent dark:group-hover:text-gray-400">
