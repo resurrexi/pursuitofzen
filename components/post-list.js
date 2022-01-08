@@ -48,6 +48,13 @@ function PostItem({ slug, meta }) {
             </div>
           )}
         </div>
+        {meta.summary && (
+          <div className="mt-2 block">
+            <p className="text-sm text-gray-600 transition duration-300 delay-200 ease-in-out sm:text-base group-hover:translate-x-2 dark:text-gray-500">
+              {meta.summary}
+            </p>
+          </div>
+        )}
       </div>
     </li>
   );

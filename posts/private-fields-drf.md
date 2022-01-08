@@ -2,6 +2,7 @@
 title: "Implementing private fields in Django Rest Framework"
 date: "2021-04-30"
 tags: ["django", "drf"]
+summary: "Private fields in a REST framework adds a layer of privacy without needing to write more serializers and views. I'll explain the motivations for using private fields in DRF and then show how to integrate a package I wrote for this purpose into your next Django project."
 ---
 
 Django Rest Framework has a pretty robust Permissions API for granting access to resources. However, during development of a role-based application, the need to allow partial access on an instance arose. In other words, the requirement to have certain fields hidden or exposed on an instance arose.
