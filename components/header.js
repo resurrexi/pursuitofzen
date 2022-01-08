@@ -32,66 +32,64 @@ function Header({ children }) {
 }
 
 function NavBar({ children }) {
-  // for hamburger menu
-  const { menuOpened, toggleMenu } = useContext(NavContext);
-
-  return (
-    <nav>
-      <div className="z-40 fixed top-0 inset-x-0 backdrop-blur-md max-w-3xl mx-auto px-4 border-b border-gray-200 sm:px-6 lg:px-8 dark:border-gray-600">
-        <div className="flex justify-between h-16">
-          <div className="flex">
-            <div className="flex-shrink-0 flex items-center sm:mr-6">
-              <Link href="/">
-                <a>
-                  <Image src="/logo.svg" alt="logo" width={40} height={40} />
-                </a>
-              </Link>
-            </div>
-            {children}
-          </div>
-          <div className="flex items-center hidden sm:flex">
-            <DarkModeToggler />
-          </div>
-          <div className="flex items-center sm:hidden">
-            <span className="sr-only">Open main menu</span>
-            <button
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-800"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-              onClick={toggleMenu}
-            >
-              {menuOpened ? <CloseIcon /> : <HamburgerMenuIcon />}
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
+  return <nav>{children}</nav>;
 }
 
 function NavMenu({ children }) {
-  const { menuOpened } = useContext(NavContext);
+  const { menuOpened, toggleMenu } = useContext(NavContext);
 
   return (
-    <>
-      <div className="hidden sm:flex sm:space-x-4">{children}</div>
-      {/* mobile menu */}
-      {menuOpened && (
-        // 4rem in the height calculation corresponds to h-16 that is set by the navbar
-        <div
-          className="z-50 fixed inset-x-0 top-16 px-4 w-screen h-[calc(100vh-4rem)] border-t border-gray-200 sm:hidden dark:border-gray-600"
-          id="mobile-menu"
-        >
-          <div className="py-6 block h-full flex flex-col justify-between">
-            <div className="space-y-1 text-center">{children}</div>
-            <div className="space-y-1">
-              <DarkModeToggler />
-            </div>
+    <div
+      className={`${
+        menuOpened ? "min-h-screen" : ""
+      } z-50 flex flex-col fixed top-0 inset-x-0 backdrop-blur-md max-w-3xl mx-auto px-4 border-b border-gray-200 sm:px-6 lg:px-8 sm:min-h-fit dark:border-gray-600`}
+    >
+      <div className="flex flex-none justify-between h-16">
+        <div className="flex">
+          <div className="flex-shrink-0 flex items-center sm:mr-6">
+            <Link href="/">
+              <a className="inline-flex items-center">
+                <Image src="/logo.svg" alt="logo" width={40} height={40} />
+              </a>
+            </Link>
+          </div>
+          <div className="hidden sm:flex sm:items-center sm:space-x-4">
+            {children}
           </div>
         </div>
-      )}
-    </>
+        <div className="flex items-center hidden sm:flex">
+          <DarkModeToggler />
+        </div>
+        <div className="flex items-center sm:hidden">
+          <span className="sr-only">Open main menu</span>
+          <button
+            type="button"
+            className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-800"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            onClick={toggleMenu}
+          >
+            {menuOpened ? <CloseIcon /> : <HamburgerMenuIcon />}
+          </button>
+        </div>
+      </div>
+      {/* mobile menu
+          4rem in the height calculation corresponds to h-16 that is set by the navbar
+        */}
+      <div
+        className={`${
+          menuOpened ? "flex flex-col" : "hidden"
+        } flex-auto sm:hidden`}
+        id="mobile-menu"
+      >
+        <div className="py-6 block h-full flex flex-auto flex-col justify-between">
+          <div className="space-y-1 text-center">{children}</div>
+          <div className="space-y-1">
+            <DarkModeToggler />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -29,7 +29,7 @@ export default function Layout({ children, pageTitle }) {
   }, [loaded]);
 
   return (
-    <div className="relative flex flex-col overflow-hidden min-h-screen bg-white transition-colors duration-1000 ease-in-out dark:bg-neutral-900 sm:overflow-auto sm:max-h-full">
+    <div className="relative flex flex-col min-h-screen h-full bg-white transition-colors duration-1000 ease-in-out dark:bg-neutral-900">
       <Head>
         <title>Pursuit of Zen - {pageTitle}</title>
         <meta charSet="utf-8" />
