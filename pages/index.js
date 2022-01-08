@@ -40,10 +40,10 @@ export default function Home({ posts, total }) {
             </h1>
           </div>
           <p className="mt-4 text-base text-gray-500 leading-relaxed sm:text-lg sm:leading-relaxed dark:text-gray-400">
-            I&apos;m a geek, musician, adventurer, and a lifelong student. I
-            like solving challenging problems and reading on how others tackle
-            the same problems. I have an interest in machine learning and
-            software engineering. You can find me on{" "}
+            I&apos;m a geek, musician, adventurer, and lifelong student. I like
+            solving challenging problems and reading on how others tackle the
+            same problems. I have an interest in machine learning and software
+            engineering. You can find me on{" "}
             <a
               href="https://stackoverflow.com/users/6245650/scratchnpurr"
               className="text-primary-600 hover:text-primary-500 dark:text-primary-500 dark:hover:text-primary-600"

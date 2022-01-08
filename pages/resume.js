@@ -67,16 +67,8 @@ function Heading({ children }) {
   );
 }
 
-function TRow({ children, striped }) {
-  return (
-    <tr
-      className={`${
-        striped ? "bg-gray-50 dark:bg-gray-800" : "bg-transparent"
-      }`}
-    >
-      {children}
-    </tr>
-  );
+function TRow({ children }) {
+  return <tr>{children}</tr>;
 }
 
 function LeadCell({ children }) {

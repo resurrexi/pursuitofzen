@@ -53,6 +53,8 @@ export default function Layout({ children, pageTitle }) {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+        <link rel="prefetch" href="/themes/prism-one-light.css" />
+        <link rel="prefetch" href="/themes/prism-one-dark.css" />
       </Head>
       <Header>
         <Header.Nav>
