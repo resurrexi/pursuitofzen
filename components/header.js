@@ -5,9 +5,9 @@ import DarkModeToggler from "./dark-mode-toggler";
 import HamburgerMenuIcon from "./icons/hamburger";
 import CloseIcon from "./icons/close";
 
-export const NavContext = createContext();
+const NavContext = createContext();
 
-export function useMenuToggle() {
+function useMenuToggle() {
   const [menuOpened, setMenuOpened] = useState(false);
   const toggleMenu = useCallback(() => {
     setMenuOpened((prev) => !prev);
@@ -17,7 +17,18 @@ export function useMenuToggle() {
 }
 
 function Header({ children }) {
-  return <header className="flex-none">{children}</header>;
+  const { menuOpened, toggleMenu } = useMenuToggle();
+
+  const menuContext = {
+    menuOpened,
+    toggleMenu,
+  };
+
+  return (
+    <NavContext.Provider value={menuContext}>
+      <header className="flex-none">{children}</header>
+    </NavContext.Provider>
+  );
 }
 
 function NavBar({ children }) {
@@ -26,9 +37,9 @@ function NavBar({ children }) {
 
   return (
     <nav>
-      <div className="relative max-w-3xl mx-auto px-4 border-b border-gray-200 sm:px-6 lg:px-8 dark:border-gray-600">
-        <div className="flex static justify-between h-16">
-          <div className="flex static">
+      <div className="z-40 fixed top-0 inset-x-0 backdrop-blur-md max-w-3xl mx-auto px-4 border-b border-gray-200 sm:px-6 lg:px-8 dark:border-gray-600">
+        <div className="flex justify-between h-16">
+          <div className="flex">
             <div className="flex-shrink-0 flex items-center sm:mr-6">
               <Link href="/">
                 <a>
@@ -69,7 +80,7 @@ function NavMenu({ children }) {
       {menuOpened && (
         // 4rem in the height calculation corresponds to h-16 that is set by the navbar
         <div
-          className="absolute z-50 backdrop-blur-md left-0 top-full px-4 bg-white/50 w-screen h-[calc(100vh-4rem)] border-t border-gray-200 sm:hidden dark:bg-neutral-900/50 dark:border-gray-600"
+          className="z-50 fixed inset-x-0 top-16 px-4 w-screen h-[calc(100vh-4rem)] border-t border-gray-200 sm:hidden dark:border-gray-600"
           id="mobile-menu"
         >
           <div className="py-6 block h-full flex flex-col justify-between">
