@@ -1,6 +1,6 @@
 ---
 title: "Ant Design's Select element for mobile"
-date: "2022-01-04"
+date: "2022-02-07"
 tags: ["react", "antdesign"]
 summary: "How watching users use my app led to me to implementing a UX improvement on Ant Design's Select component."
 ---
