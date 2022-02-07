@@ -136,7 +136,7 @@ A keen reader and savvy user of React may notice the `onChange` prop that I have
 
 > After wrapped by `Form.Item` with `name` property, `value`(or other property defined by `valuePropName`) `onChange`(or other property defined by trigger) props will be added to form controls...
 
-Without this injection of the prop to the child, my `SearchableSelect` would probably have to be a big more complex. Replacing the `Select` component with my custom `SearchableSelect` component in the form gets what I need to create a better user experience on mobile.
+Without this injection of the prop to the child, my `SearchableSelect` would probably have to be a bit more complex - I actually created this as a take-home interview assignment for a React candidate and her solution was to create 2 separate components. Replacing the `Select` component with my custom `SearchableSelect` component in the form gets what I need to create a better user experience on mobile.
 
 <figure>
 <img src="https://i.imgur.com/7xDvwsl.gif" alt="select-modified" class="block mx-auto">
