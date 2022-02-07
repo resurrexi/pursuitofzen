@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import Layout from "../../components/layout";
 import Date from "../../components/date";
 import ReadTimer from "../../components/read-timer";
@@ -68,7 +69,10 @@ export default function Post({ postData }) {
         </div>
         {/* article element below must have "grid grid-cols-1" for mobile responsiveness */}
         <article className="line-numbers grid grid-cols-1 pt-6 prose prose-slate max-w-3xl dark:prose-invert prose-a:text-primary-600 hover:prose-a:text-primary-500 dark:prose-a:text-primary-500 dark:hover:prose-a:text-primary-600">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown
+            rehypePlugins={[rehypeRaw]}
+            remarkPlugins={[remarkGfm]}
+          >
             {postData.content}
           </ReactMarkdown>
         </article>
