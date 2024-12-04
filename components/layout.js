@@ -29,9 +29,9 @@ export default function Layout({ children, pageTitle }) {
   }, [loaded]);
 
   return (
-    <div className="relative flex flex-col min-h-screen h-full bg-white transition-colors duration-1000 ease-in-out dark:bg-neutral-900">
+    <div className="relative flex h-full min-h-screen flex-col bg-white transition-colors duration-1000 ease-in-out dark:bg-neutral-900">
       <Head>
-        <title>Pursuit of Zen - {pageTitle}</title>
+        <title>{`Pursuit of Zen - ${pageTitle}`}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Personal website of Liquan Yang" />
@@ -53,8 +53,6 @@ export default function Layout({ children, pageTitle }) {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="prefetch" href="/themes/prism-one-light.css" />
-        <link rel="prefetch" href="/themes/prism-one-dark.css" />
       </Head>
       <Header>
         <Header.Nav>
@@ -64,7 +62,7 @@ export default function Layout({ children, pageTitle }) {
           </Header.NavMenu>
         </Header.Nav>
       </Header>
-      <div className="flex flex-auto justify-center pt-24 pb-8">
+      <div className="flex flex-auto justify-center pb-8 pt-24">
         {!loaded ? (
           <LoadingContainer />
         ) : (

@@ -12,7 +12,7 @@ export function MobileButton({ children, ...rest }) {
   return (
     <button
       type="button"
-      className="text-white bg-primary-600 inline-flex items-center rounded-md px-4 py-3 text-sm hover:bg-primary-500 dark:bg-primary-700 dark:hover:bg-primary-600"
+      className="inline-flex items-center rounded-md bg-primary-600 px-4 py-3 text-sm text-white hover:bg-primary-500 dark:bg-primary-700 dark:hover:bg-primary-600"
       {...rest}
     >
       {children}
@@ -24,7 +24,7 @@ export function PageButton({ children, ...rest }) {
   return (
     <button
       type="button"
-      className="text-primary-600 inline-flex items-center rounded-md px-4 py-2 text-base font-medium hover:bg-gray-100 hover:text-primary-500 dark:hover:bg-neutral-800"
+      className="inline-flex items-center rounded-md px-4 py-2 text-base font-medium text-primary-600 hover:bg-gray-100 hover:text-primary-500 dark:hover:bg-neutral-800"
       {...rest}
     >
       {children}
@@ -36,7 +36,7 @@ export function PageIconButton({ children, ...rest }) {
   return (
     <button
       type="button"
-      className="text-primary-600 inline-flex items-center rounded-md px-2 py-2 text-base font-medium hover:bg-gray-100 hover:text-primary-500 dark:hover:bg-neutral-800"
+      className="inline-flex items-center rounded-md px-2 py-2 text-base font-medium text-primary-600 hover:bg-gray-100 hover:text-primary-500 dark:hover:bg-neutral-800"
       {...rest}
     >
       {children}
@@ -57,11 +57,11 @@ export default function Paginator({ basePath, currentPage, totalPages }) {
   );
 
   return (
-    <div className="py-3 flex items-center justify-between">
+    <div className="flex items-center justify-between py-3">
       <div
         className={joinClasses(
           currentPage > 1 ? "justify-between" : "justify-end",
-          "flex-auto flex sm:hidden",
+          "flex flex-auto sm:hidden",
         )}
       >
         {currentPage > 1 && (
@@ -75,7 +75,7 @@ export default function Paginator({ basePath, currentPage, totalPages }) {
           </MobileButton>
         )}
       </div>
-      <div className="hidden items-center justify-center sm:flex-1 sm:flex">
+      <div className="hidden items-center justify-center sm:flex sm:flex-1">
         <nav className="inline-flex space-x-1" aria-label="Pagination">
           {currentPage > 1 && (
             <>
@@ -111,7 +111,7 @@ export default function Paginator({ basePath, currentPage, totalPages }) {
           )}
           <span
             aria-current="page"
-            className="bg-primary-600 text-gray-200 inline-flex items-center rounded-md px-4 py-2 text-base font-medium"
+            className="inline-flex items-center rounded-md bg-primary-600 px-4 py-2 text-base font-medium text-gray-200"
           >
             {currentPage}
           </span>
