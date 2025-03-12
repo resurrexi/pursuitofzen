@@ -176,7 +176,7 @@ export default function Resume() {
               <ExperienceList.Item
                 primary="Google Cloud Professional Data Engineer"
                 tertiary={
-                  <a href="https://www.credential.net/f8c0d7dd-1563-4652-9932-0d655acd8727#acc.7HBavG42">
+                  <a href="https://www.credly.com/badges/3888043a-78b5-47c8-ad84-d4a6c419d27a/public_url">
                     View certificate
                   </a>
                 }
