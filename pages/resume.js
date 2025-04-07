@@ -37,6 +37,7 @@ const workExperience = [
     location: "Remote",
     dates: "2019/04 - present",
     descriptionList: [
+      "Developed a Web3 NFT generator app in Python that takes into consideration asset positions for conditionally selecting layers, and respecting rarity chances by rolling rarities via a Gaussian distribution.",
       "Developed an app for applying mosaic censorship to facial features in videos. It utilized multi-threading for applying frame-by-frame censorship, resulting in quicker processing times. Used Python, numpy, and OpenCV.",
       "Developed multiple Python-based ETL scripts for a banking entity. Script reduced execution time of ETL processes by 15-25%.",
       "Designed and developed a customer-facing website for a fertility company. Used PHP, Bootstrap, and OctoberCMS.",
@@ -119,7 +120,7 @@ export default function Resume() {
                 <LeadCell>Technologies</LeadCell>
                 <Cell>
                   Docker, Hadoop, Tableau, Django, Flask, FastAPI, React, AWS,
-                  GCP, Snowflake, Airflow
+                  GCP, Snowflake, Airflow, Kubernetes, Terraform
                 </Cell>
               </TRow>
               <TRow>
@@ -190,7 +191,7 @@ export default function Resume() {
               <ExperienceList.Item
                 primary="PyImageSearch Gurus"
                 tertiary={
-                  <a href="https://customers.pyimagesearch.com/certificates/pyimagesearch-gurus-certificate-of-completion/?course_id=386&cert-nonce=5316dc1334">
+                  <a href="https://customers.pyimagesearch.com/certificates/pyimagesearch-gurus-certificate-of-completion/?course_id=386&cert-nonce=19c47830a7">
                     View certificate
                   </a>
                 }
