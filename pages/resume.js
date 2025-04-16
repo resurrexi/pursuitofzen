@@ -119,8 +119,8 @@ export default function Resume() {
               <TRow>
                 <LeadCell>Technologies</LeadCell>
                 <Cell>
-                  Docker, Hadoop, Tableau, Django, Flask, FastAPI, React, AWS,
-                  GCP, Snowflake, Airflow, Kubernetes, Terraform
+                  Docker, Hadoop, Tableau, Django, Flask, FastAPI, React, dbt,
+                  AWS, GCP, Snowflake, Airflow, Kubernetes, Terraform
                 </Cell>
               </TRow>
               <TRow>
