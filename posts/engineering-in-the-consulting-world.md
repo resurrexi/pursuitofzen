@@ -1,6 +1,6 @@
 ---
 title: "Engineering in the consulting world"
-date: "2026-04-20"
+date: "2026-04-26"
 tags: ["ai", "consulting"]
 summary: "Tidbits on how to onboard quickly in today's consulting world"
 ---
