@@ -13,4 +13,4 @@ Since the discovery phase of the project consisted of comparing AWS service with
 
 ## Embeddings on codebase
 
-Another useful tool for onboarding to a project's codebase has been [cocoindex-code](https://github.com/cocoindex-io/cocoindex-code). It indexes the codebase using either a local embedding model or a model available in LiteLLM. Once the codebase is indexed, use the provided `ccc` skill to ask the coding agent about the code.
+Another useful tool for onboarding to a project's codebase has been [cocoindex-code](https://github.com/cocoindex-io/cocoindex-code). Similar to [GitNexus](https://github.com/abhigyanpatwari/GitNexus), cocoindex indexes the codebase using either a local embedding model or a model available in LiteLLM. Once the codebase is indexed, use the provided `ccc` skill to ask the coding agent about the code. Cocoindex will continuously track the project repository for changes and incrementally index changed or new files.
