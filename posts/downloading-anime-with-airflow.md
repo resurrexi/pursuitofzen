@@ -21,7 +21,7 @@ Here's a recent set of parameters I used to download Season 4 of _Ginga Eiyuu De
 
 Let's take look at the pipeline for downloading episodes.
 
-[airflow-dag.png](https://postimg.cc/68NBLtnZ)
+![Airflow dag](https://i.postimg.cc/pLmyvdds/airflow-dag.png)
 
 ### search_for_anime
 
