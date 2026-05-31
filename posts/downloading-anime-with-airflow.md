@@ -230,11 +230,6 @@ def run():
         provider = AllAnimeProvider()
 
         search_results = provider.get_search(anime)
-        # anime_results = [
-        #     Anime.from_search_result(provider, r)
-        #     for r in search_results
-        #     if LanguageTypeEnum.SUB in r.languages
-        # ]
         anime_results = [
             {"title": r.name, "id": r.identifier}
             for r in search_results
